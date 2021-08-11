@@ -2,6 +2,14 @@
   - [Basics](#basics)
     - [Defining a rule](#defining-a-rule)
     - [Literals](#literals)
+  - [Complex Syntaxes](#complex-syntaxes)
+    - [Groups](#groups)
+    - [Or syntax](#or-syntax)
+  - [Modifiers](#modifiers)
+    - [Options](#options)
+    - [Repetitions](#repetitions)
+      - [One or more (+)](#one-or-more-)
+      - [Zero or more (?)](#zero-or-more-)
 
 # What is the SEBNF
 
@@ -43,3 +51,64 @@ one "1"
 one_plus_one one "+" one
 ```
 
+## Complex Syntaxes
+
+### Groups
+
+This treats everything inside the group as one expression (will be useful later)
+
+```py
+full_name = ("SEBNF" "simplified extended backus naur form")
+```
+
+### Or syntax
+
+```py
+# Matches an output from a dice
+
+dice = 
+  "1"
+| "2"
+| "3"
+| "4"
+| "5"
+| "6"
+```
+
+## Modifiers
+
+SEBNF has modifiers similar to regex (+, *, ?)
+
+### Options
+
+This modifier is used to represent an optional expression
+
+```py
+# SEBNF code to represent an imaginary function declaration (identifier and arguments are imaginary)
+
+function_head = identifier "(" arguments? ")"
+```
+
+### Repetitions
+
+#### One or more (+)
+
+```py
+# digit will be an imaginary rule to represent digits
+
+integer = digit+ : Matches any expression containing one or more digits
+
+# Matches : "0", "24345904" ...
+# Doesn't match : "0 0 9", "3 3", " 9089" ...
+```
+
+#### Zero or more (?)
+
+```py
+# digit will be an imaginary rule to represent digits
+
+integer = digit+ : Matches any expression containing zero or more digits
+
+# Matches : "", "0", "24345904" ...
+# Doesn't match : "0 0 9", "3 3", " 9089" ...
+```
