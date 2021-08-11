@@ -112,3 +112,28 @@ integer = digit+ : Matches any expression containing zero or more digits
 # Matches : "", "0", "24345904" ...
 # Doesn't match : "0 0 9", "3 3", " 9089" ...
 ```
+
+#### Specific amount or range
+
+```py
+# digit will be an imaginary rule to represent digits
+
+# Specific amount
+
+three_digits = digit * 3 : Matches any non-negative 3-digit integer
+
+# Matches: "234", "000", "921"
+# Doesn't match: "1234", "64", "314.1", "-562"
+
+# Range
+
+small_integer = digit * ..2 : Matches any non-negative integer with up to and including 2 digits
+
+medium_integer = digit * 3..5 : Matches any non-negative integer with between 3 and 5 digits inclusive
+
+big_integer = digit * 6.. : Matches any non-negative integer with at least 6 digits
+
+any_number = digit * .. : Matches any non-negative integer
+
+# note: the above also counts padded zeroes, so 0012 is seen as a 4-digit number when it's actually a 2-digit one, 12
+```
