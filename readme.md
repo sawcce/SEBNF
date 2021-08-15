@@ -94,7 +94,7 @@ The charater symbol in sebnf is only used for the character range
 
 Since the character range only accepts characters you don't need to escape them.
 
-If you want to use a character by ascii code you can do `` $code ``
+If you want to use a character based on its hexadecimal ASCII value you can do `$<hex value>`
 
 #### Unions
 
