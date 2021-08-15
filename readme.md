@@ -83,6 +83,7 @@ dice =
 Matching the output of a dice like in the previous example is pretty annoying.
 That's why the character range operator exists
 
+This is the grammar for it:
 ```py
 character_range = character ".." character : matches any character from ascii code of the first to the second character
 ```
