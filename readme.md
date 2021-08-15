@@ -85,7 +85,7 @@ That's why the character range operator exists
 
 This is the grammar for it:
 ```py
-character_range = character ".." character : matches any character from ascii code of the first to the second character
+character_range = character ".." character : matches any character from the ASCII code of the first character to that of second character inclusive
 ```
 
 #### What is a character
