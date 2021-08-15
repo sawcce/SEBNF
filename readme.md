@@ -91,7 +91,8 @@ character_range = character ".." character : matches any character from ascii co
 
 The charater symbol in sebnf is only used for the character range
 
-Since the character range only accepts characters you don't need to escape them
+Since the character range only accepts characters you don't need to escape them.
+
 If you want to use a character by ascii code you can do `` $code ``
 
 #### Unions
