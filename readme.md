@@ -5,6 +5,9 @@
   - [Complex Syntaxes](#complex-syntaxes)
     - [Groups](#groups)
     - [Or syntax](#or-syntax)
+    - [Character Range](#character-range)
+      - [What is a character](#what-is-a-character)
+      - [Unions](#unions)
   - [Modifiers](#modifiers)
     - [Options](#options)
     - [Repetitions](#repetitions)
@@ -75,6 +78,25 @@ dice =
 | "5"
 | "6"
 ```
+### Character Range
+
+Matching the output of a dice like in the previous example is pretty annoying.
+That's why the character range operator exists
+
+```py
+character_range = character ".." character : matches any character from ascii code of the first to the second character
+```
+
+#### What is a character
+
+The charater symbol in sebnf is only used for the character range
+
+Since the character range only accepts characters you don't need to escape them
+If you want to use a character by ascii code you can do `` $code ``
+
+#### Unions
+
+To reproduce this regex pattern `` [a-zA-Z] `` you can just do `` a..z | A..Z `` since `` a..z `` is the equivalent of `` "a"|"b"|"c"|"d" `` ...
 
 ## Modifiers
 
